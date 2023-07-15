@@ -54,7 +54,14 @@ class Car:
     def __eq__(self, other):
         """Определяет поведение оператора равенства (==)."""
         if isinstance(other, Car):
-            return self.__id == other.__id
+            return (
+                    self.get_brand() == other.get_brand() and
+                    self.get_model() == other.get_model() and
+                    self.year == other.year and
+                    self.color == other.color and
+                    self.price == other.price and
+                    self.reg_number == other.reg_number
+            )
         return False
 
     def __gt__(self, other):

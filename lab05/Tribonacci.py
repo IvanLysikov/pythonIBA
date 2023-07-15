@@ -8,8 +8,12 @@ class Tribonacci:
 
     def __next__(self):
         if self.count < 35:
-            if self.count < 3:
-                result = self.count
+            if self.count == 0 or self.count == 1:
+                self.count += 1
+                return 0
+            elif self.count == 2:
+                self.count += 1
+                return 1
             else:
                 result = self.a + self.b + self.c
                 self.a, self.b, self.c = self.b, self.c, result
